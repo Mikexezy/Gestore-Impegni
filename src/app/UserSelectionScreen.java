@@ -2,6 +2,7 @@ package app;
 import javax.swing.*;
 import java.awt.*;
 
+//Classe UserSelectionScreen
 public class UserSelectionScreen extends JFrame {
     private UserManager userManager;
     private DefaultListModel<User> userModel;
@@ -11,9 +12,10 @@ public class UserSelectionScreen extends JFrame {
     private JButton createButton;
     private JButton removeButton;
 
+    //Costruttore della classe
     public UserSelectionScreen() {
         userManager = new UserManager();
-
+        
         setTitle("Seleziona o crea un utente");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,8 +32,16 @@ public class UserSelectionScreen extends JFrame {
         userField = new JTextField();
 
         selectButton = new JButton("Seleziona Utente");
+        selectButton.setBackground(Color.YELLOW);
+        selectButton.setOpaque(true);
+        
         createButton = new JButton("Crea Utente");
+        createButton.setBackground(Color.GREEN);
+        createButton.setOpaque(true);
+        
         removeButton = new JButton("Rimuovi Utente");
+        removeButton.setBackground(Color.RED);
+        removeButton.setOpaque(true);
 
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BorderLayout());
@@ -52,6 +62,7 @@ public class UserSelectionScreen extends JFrame {
         setVisible(true);
     }
 
+    //Metodo per selezionare l'User
     private void selectUser() {
         User selectedUser = userList.getSelectedValue();
         if (selectedUser != null) {
@@ -62,6 +73,7 @@ public class UserSelectionScreen extends JFrame {
         }
     }
 
+  //Metodo per creare l'User
     private void createUser() {
         String userName = userField.getText().trim();
         if (!userName.isEmpty()) {
@@ -74,6 +86,7 @@ public class UserSelectionScreen extends JFrame {
         }
     }
 
+  //Metodo per rimuovere l'User
     private void removeUser() {
         User selectedUser = userList.getSelectedValue();
         if (selectedUser != null) {

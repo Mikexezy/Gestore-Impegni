@@ -1,8 +1,6 @@
 package app;
-// Importa le classi necessarie per la gui.
 import javax.swing.*;
 import java.awt.*;
-// Importa la lista per gestire le liste.
 import java.util.List;
 
 
@@ -48,7 +46,13 @@ public class App extends JFrame {
 
         // Inizializzazione e disposizione dei pulsanti per l'aggiunta, la rimozione, la modifica, l'ordinamento e il ritorno alla selezione utente.
         addButton = new JButton("Aggiungi Task");
+        addButton.setBackground(Color.GREEN);
+        addButton.setOpaque(true);
+        
         removeButton = new JButton("Rimuovi Task");
+        removeButton.setBackground(Color.RED);
+        removeButton.setOpaque(true);
+        
         editButton = new JButton("Modifica Task");
         sortButton = new JButton("Ordina per priorità");
         backButton = new JButton("Torna alla selezione utente");
